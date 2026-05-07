@@ -32,7 +32,6 @@ function BentoGrid({ posts }: { posts: PostMeta[] }) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-auto">
-      {/* Featured large card */}
       {featured && (
         <Link href={`/blog/${featured.slug}`} className="bento-card md:col-span-2 relative rounded-3xl overflow-hidden min-h-[360px] flex flex-col justify-end group">
           <div className="absolute inset-0 bg-brand-cream" />
@@ -47,8 +46,6 @@ function BentoGrid({ posts }: { posts: PostMeta[] }) {
           </div>
         </Link>
       )}
-
-      {/* Smaller cards */}
       <div className="flex flex-col gap-4">
         {rest.slice(0, 2).map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="bento-card bg-brand-cream rounded-3xl p-6 flex flex-col justify-between min-h-[168px] group border border-brand-pink/10">
@@ -59,22 +56,12 @@ function BentoGrid({ posts }: { posts: PostMeta[] }) {
             </div>
           </Link>
         ))}
-
-        {/* Filler card if fewer than 3 posts */}
         {rest.length < 2 && (
           <div className="bento-card bg-brand-purple rounded-3xl p-6 flex flex-col justify-end min-h-[168px]">
             <p className="font-serif text-lg font-bold text-white leading-snug">New posts every week. Subscribe to stay in the loop.</p>
           </div>
         )}
       </div>
-
-      {/* Bottom row extra posts */}
-      {rest.slice(2, 5).map((post) => (
-        <Link key={post.slug} href={`/blog/${post.slug}`} className="bento-card bg-white border border-gray-100 rounded-3xl p-6 group">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-pink block mb-2">{post.category}</span>
-          <h3 className="font-serif text-lg font-bold text-brand-maroon leading-snug group-hover:text-brand-purple transition-colors">{post.title}</h3>
-        </Link>
-      ))}
     </div>
   );
 }
@@ -85,53 +72,79 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-white">
-        {/* Decorative blobs */}
-        <div className="absolute top-[-80px] right-[-80px] w-[420px] h-[420px] rounded-full bg-brand-pink/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[-60px] left-[-60px] w-[320px] h-[320px] rounded-full bg-brand-purple/10 blur-3xl pointer-events-none" />
-        <div className="absolute top-[30%] left-[10%] w-[180px] h-[180px] rounded-full bg-brand-orange/10 blur-2xl pointer-events-none" />
+      <section className="relative overflow-hidden bg-brand-cream">
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-0 min-h-[88vh] items-center">
+          {/* Left: text */}
+          <div className="py-16 md:py-24 flex flex-col justify-center">
+            <p className="inline-block text-brand-pink font-semibold text-xs uppercase tracking-[0.2em] mb-6 bg-brand-pink/10 px-4 py-1.5 rounded-full w-fit">
+              For Homeschool Families
+            </p>
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-brand-maroon leading-[1.05] mb-6 text-balance">
+              Homeschool with{" "}
+              <span className="text-brand-purple">Purpose.</span>{" "}
+              Teach with{" "}
+              <span className="text-brand-orange">Joy.</span>
+            </h1>
+            <p className="text-gray-500 text-lg leading-relaxed mb-10 max-w-md">
+              Practical resources, real curriculum reviews, and a framework that actually works for your family. No guilt. No overwhelm. Just progress.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/free-guide"
+                className="bg-brand-pink hover:bg-brand-purple text-white font-semibold px-7 py-4 rounded-full transition-all duration-200 text-sm shadow-lg shadow-brand-pink/25 text-center"
+              >
+                Download the Free S.M.A.R.T. Guide
+              </Link>
+              <Link
+                href="/blog"
+                className="border-2 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white font-semibold px-7 py-4 rounded-full transition-all duration-200 text-sm text-center"
+              >
+                Browse the Blog
+              </Link>
+            </div>
+          </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <p className="inline-block text-brand-pink font-semibold text-xs uppercase tracking-[0.2em] mb-6 bg-brand-pink/10 px-4 py-1.5 rounded-full">
-            For Homeschool Families
-          </p>
-
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-brand-maroon leading-[1.05] mb-6 text-balance">
-            Homeschool with{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-brand-purple">Purpose.</span>
-              <span className="absolute bottom-1 left-0 w-full h-3 bg-brand-pink/20 rounded-full -z-0" />
-            </span>{" "}
-            Teach with{" "}
-            <span className="text-brand-orange">Joy.</span>
-          </h1>
-
-          <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-            Practical resources, real curriculum reviews, and a framework that actually works for your family. No guilt. No overwhelm. Just progress.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/free-guide"
-              className="bg-brand-pink hover:bg-brand-purple text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 text-base shadow-lg shadow-brand-pink/25 hover:shadow-brand-purple/25"
-            >
-              Download the Free S.M.A.R.T. Guide
-            </Link>
-            <Link
-              href="/blog"
-              className="border-2 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 text-base"
-            >
-              Browse the Blog
-            </Link>
+          {/* Right: Stacie's photo */}
+          <div className="relative hidden md:flex items-end justify-center h-full min-h-[88vh]">
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-pink/10 via-brand-purple/5 to-brand-orange/10" />
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/stacie-portrait.jpg"
+                alt="Stacie J. Young, founder of Thrive Homeschool Group"
+                fill
+                className="object-cover object-top"
+                priority
+                sizes="50vw"
+              />
+              {/* Gradient fade at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-cream to-transparent" />
+            </div>
           </div>
         </div>
-
-        {/* Scroll hint */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-300">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-gray-300 to-transparent" />
-        </div>
       </section>
+
+      {/* ── PHOTO STRIP ── */}
+      <ScrollReveal>
+        <section className="py-14 px-4 bg-white overflow-hidden">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-center text-brand-pink font-semibold text-xs uppercase tracking-[0.2em] mb-8">Real Family. Real Homeschool.</p>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="relative rounded-2xl overflow-hidden h-52 md:h-64">
+                <Image src="/images/kids-homeschool.jpg" alt="Kids doing homeschool work at the table" fill className="object-cover" sizes="33vw" />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden h-52 md:h-64">
+                <Image src="/images/family-dc.jpg" alt="Family field trip to Washington DC" fill className="object-cover object-top" sizes="33vw" />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden h-52 md:h-64">
+                <Image src="/images/kid-artwork.jpg" alt="Student showing off his artwork" fill className="object-cover object-top" sizes="33vw" />
+              </div>
+            </div>
+            <p className="text-center text-gray-400 text-sm mt-5 italic">
+              From DC field trips to kitchen table lessons, this is what real homeschooling looks like.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* ── BENTO BLOG GRID ── */}
       <section className="max-w-6xl mx-auto px-4 py-20">
@@ -146,38 +159,16 @@ export default function HomePage() {
             </Link>
           </div>
         </ScrollReveal>
-
         <ScrollReveal delay={100}>
           <BentoGrid posts={posts} />
         </ScrollReveal>
-
         <div className="mt-6 text-center md:hidden">
-          <Link href="/blog" className="text-sm font-medium text-brand-purple hover:text-brand-pink transition-colors">
-            View all posts →
-          </Link>
+          <Link href="/blog" className="text-sm font-medium text-brand-purple hover:text-brand-pink transition-colors">View all posts →</Link>
         </div>
       </section>
 
-      {/* ── STAT STRIP ── */}
-      <ScrollReveal>
-        <section className="border-y border-gray-100 py-12 px-4">
-          <div className="max-w-5xl mx-auto grid grid-cols-3 gap-6 text-center">
-            {[
-              { num: "5", label: "Topics covered" },
-              { num: "Free", label: "S.M.A.R.T. guide" },
-              { num: "Real", label: "Homeschool family" },
-            ].map((s) => (
-              <div key={s.label}>
-                <p className="font-serif text-4xl font-bold text-brand-purple mb-1">{s.num}</p>
-                <p className="text-gray-500 text-sm uppercase tracking-widest">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ── OPT-IN SECTION ── */}
-      <section className="py-24 px-4">
+      {/* ── OPT-IN ── */}
+      <section className="py-24 px-4 bg-brand-cream">
         <ScrollReveal>
           <div className="max-w-2xl mx-auto text-center mb-10">
             <p className="text-brand-pink font-semibold text-xs uppercase tracking-[0.18em] mb-3">Free Download</p>
@@ -196,33 +187,43 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      {/* ── MISSION STRIP ── */}
+      {/* ── MISSION + STACIE AT DESK ── */}
       <ScrollReveal>
         <section className="bg-brand-maroon text-white py-20 px-4">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative rounded-3xl overflow-hidden h-80">
+              <Image
+                src="/images/stacie-desk.jpg"
+                alt="Stacie planning homeschool curriculum at her desk"
+                fill
+                className="object-cover object-top"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-maroon/40 to-transparent" />
+            </div>
             <div>
               <p className="text-brand-orange font-semibold text-xs uppercase tracking-[0.18em] mb-3">Our Heart</p>
-              <h2 className="font-serif text-4xl font-bold leading-tight mb-4">
+              <h2 className="font-serif text-4xl font-bold leading-tight mb-5">
                 You Don&apos;t Have to Figure This Out Alone
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed">
-                Thrive Homeschool Group exists to give you practical tools and genuine encouragement for the homeschool journey, without the overwhelm. Real ideas. Real families. Real results.
+              <p className="text-white/75 text-lg leading-relaxed mb-6">
+                Thrive Homeschool Group gives you practical tools and genuine encouragement for the homeschool journey, without the overwhelm. Real ideas. Real families. Real results.
               </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              {[
-                { icon: "📚", title: "Curriculum Reviews", desc: "Honest takes on what works at every age and stage." },
-                { icon: "🗓️", title: "Lesson Planning", desc: "Simple frameworks that flex with your real life." },
-                { icon: "👨‍👩‍👧‍👦", title: "Multi-Age Families", desc: "Teaching a 3rd grader and a senior? We get it." },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-4 items-start bg-white/10 rounded-2xl p-4">
-                  <span className="text-2xl">{item.icon}</span>
-                  <div>
-                    <p className="font-semibold text-white">{item.title}</p>
-                    <p className="text-white/60 text-sm">{item.desc}</p>
+              <div className="flex flex-col gap-3">
+                {[
+                  { icon: "📚", title: "Curriculum Reviews", desc: "Honest takes on what works at every age and stage." },
+                  { icon: "🗓️", title: "Lesson Planning", desc: "Simple frameworks that flex with your real life." },
+                  { icon: "👨‍👩‍👧‍👦", title: "Multi-Age Families", desc: "Teaching a 3rd grader and a senior? We get it." },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-4 items-start bg-white/10 rounded-2xl p-4">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <p className="font-semibold text-white">{item.title}</p>
+                      <p className="text-white/60 text-sm">{item.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
