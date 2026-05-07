@@ -2,21 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center h-12 overflow-hidden">
+    <header className={`sticky top-0 z-50 bg-white border-b border-gray-100 transition-all duration-300 ${scrolled ? "shadow-md py-0" : "shadow-sm py-0"}`}>
+      <div className={`max-w-6xl mx-auto px-4 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-12" : "h-16"}`}>
+        <Link href="/" className={`flex items-center overflow-hidden transition-all duration-300 ${scrolled ? "h-9" : "h-12"}`}>
           <Image
             src="/images/logo.png"
             alt="Thrive Homeschool Group"
             width={260}
             height={100}
-            className="h-24 w-auto object-contain scale-[1.35] object-center"
+            className={`w-auto object-contain object-center transition-all duration-300 ${scrolled ? "h-16 scale-[1.2]" : "h-24 scale-[1.35]"}`}
             priority
           />
         </Link>
@@ -28,13 +35,12 @@ export default function Header() {
           <Link href="/contact" className="text-gray-700 hover:text-brand-purple transition-colors">Contact</Link>
           <Link
             href="/free-guide"
-            className="bg-brand-pink text-white px-4 py-2 rounded-full hover:bg-brand-purple transition-colors"
+            className="bg-brand-pink text-white px-4 py-2 rounded-full hover:bg-brand-purple transition-colors text-sm font-semibold"
           >
             Free Guide
           </Link>
         </nav>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden p-2 text-gray-700"
           onClick={() => setOpen(!open)}
@@ -51,7 +57,7 @@ export default function Header() {
           <Link href="/about" onClick={() => setOpen(false)} className="text-gray-700">About</Link>
           <Link href="/blog" onClick={() => setOpen(false)} className="text-gray-700">Blog</Link>
           <Link href="/contact" onClick={() => setOpen(false)} className="text-gray-700">Contact</Link>
-          <Link href="/free-guide" onClick={() => setOpen(false)} className="bg-brand-pink text-white px-4 py-2 rounded-full text-center">
+          <Link href="/free-guide" onClick={() => setOpen(false)} className="bg-brand-pink text-white px-4 py-2 rounded-full text-center font-semibold">
             Free Guide
           </Link>
         </div>

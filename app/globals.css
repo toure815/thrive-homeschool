@@ -16,3 +16,23 @@
     text-wrap: balance;
   }
 }
+
+/* Scroll reveal animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bento card hover lift */
+.bento-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(107, 63, 160, 0.12);
+}
