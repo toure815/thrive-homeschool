@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,9 +10,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl font-bold text-brand-navy hover:text-brand-purple transition-colors">
-          {/* Logo image goes here once received */}
-          Thrive Homeschool Group
+        <Link href="/" className="flex items-center h-12 overflow-hidden">
+          <Image
+            src="/images/logo.png"
+            alt="Thrive Homeschool Group"
+            width={260}
+            height={100}
+            className="h-24 w-auto object-contain scale-[1.35] object-center"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

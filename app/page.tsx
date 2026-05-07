@@ -57,7 +57,7 @@ export default function HomePage() {
       </section>
 
       {/* Mission strip */}
-      <section className="bg-brand-navy text-white py-16 px-4">
+      <section className="bg-brand-maroon text-white py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl font-bold mb-4">You Don&apos;t Have to Figure This Out Alone</h2>
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
