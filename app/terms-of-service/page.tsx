@@ -18,7 +18,7 @@ export default function TermsPage() {
 
         <h2 className="font-serif text-2xl font-bold text-brand-navy">Use of Content</h2>
         <p>
-          All content on this site — including blog posts, printables, and free downloads — is for personal, non-commercial use only. You may not reproduce, distribute, or sell our content without written permission.
+          All content on this site, including blog posts, printables, and free downloads, is for personal, non-commercial use only. You may not reproduce, distribute, or sell our content without written permission.
         </p>
 
         <h2 className="font-serif text-2xl font-bold text-brand-navy">Affiliate Links</h2>

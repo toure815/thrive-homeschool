@@ -19,10 +19,10 @@ export default function AboutPage() {
 
       <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
         <p>
-          Hi! I&apos;m the founder of Thrive Homeschool Group, and I started this community because I know exactly how overwhelming it can feel to be responsible for your child&apos;s entire education — especially on the days when nothing goes according to plan.
+          Hi! I&apos;m the founder of Thrive Homeschool Group, and I started this community because I know exactly how overwhelming it can feel to be responsible for your child&apos;s entire education, especially on the days when nothing goes according to plan.
         </p>
         <p>
-          After years of homeschooling my own kids through different stages, different learning styles, and more than a few curriculum pivots, I realized that what families need most isn&apos;t more content — it&apos;s a framework. A way to plan with confidence and adjust without guilt.
+          After years of homeschooling my own kids through different stages, different learning styles, and more than a few curriculum pivots, I realized that what families need most isn&apos;t more content. It&apos;s a framework. A way to plan with confidence and adjust without guilt.
         </p>
         <p>
           That&apos;s why I created the SMART Homeschooling system and this resource hub. Everything here is practical, tested in a real homeschool, and designed to make your teaching life a little lighter.
@@ -30,7 +30,7 @@ export default function AboutPage() {
 
         <h2 className="font-serif text-2xl font-bold text-brand-navy mt-8">Our Mission</h2>
         <p>
-          Thrive Homeschool Group exists to equip homeschool families with tools, resources, and encouragement to educate their children with purpose and joy — no matter what curriculum they use or what their school day looks like.
+          Thrive Homeschool Group exists to equip homeschool families with tools, resources, and encouragement to educate their children with purpose and joy, no matter what curriculum they use or what their school day looks like.
         </p>
       </div>
 

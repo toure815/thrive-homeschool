@@ -4,7 +4,7 @@ import BlogCard from "@/components/BlogCard";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Thrive Homeschool Group — Practical Homeschool Resources for Families",
+  title: "Thrive Homeschool Group: Practical Homeschool Resources for Families",
   description: "Curriculum guides, lesson planning tools, and the free SMART Homeschooling Guide for homeschool families who want to teach with intention.",
 };
 
@@ -24,7 +24,7 @@ export default function HomePage() {
               Homeschool with Purpose. Teach with Joy.
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Practical curriculum resources, lesson planning guides, and community for homeschool families at every stage — whether you&apos;re just starting or you&apos;ve been at it for years.
+              Practical curriculum resources, lesson planning guides, and community for homeschool families at every stage. Whether you&apos;re just starting or you&apos;ve been at it for years.
             </p>
           </div>
           <div>
@@ -61,7 +61,7 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl font-bold mb-4">You Don&apos;t Have to Figure This Out Alone</h2>
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            Thrive Homeschool Group exists to give you practical tools and encouragement for the homeschool journey — without the overwhelm. Real ideas. Real families. Real results.
+            Thrive Homeschool Group exists to give you practical tools and encouragement for the homeschool journey, without the overwhelm. Real ideas. Real families. Real results.
           </p>
           <a
             href="/free-guide"
