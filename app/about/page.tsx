@@ -18,7 +18,7 @@ export default function AboutPage() {
           src="/images/stacie.jpeg"
           alt="Stacie J. Young, founder of Thrive Homeschool Group"
           fill
-          className="object-cover rotate-90 scale-[1.4]"
+          className="object-cover object-top"
           sizes="192px"
         />
       </div>
