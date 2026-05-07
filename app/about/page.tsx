@@ -15,7 +15,7 @@ export default function AboutPage() {
 
       <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-brand-pink/30 mx-auto mb-8 relative">
         <Image
-          src="/images/stacie-founder.jpeg"
+          src="/images/stacie-v2.jpeg"
           alt="Stacie J. Young, founder of Thrive Homeschool Group"
           fill
           className="object-cover object-top"
