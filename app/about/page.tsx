@@ -16,7 +16,7 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
         <div className="relative rounded-3xl overflow-hidden h-[480px]">
           <Image
-            src="/images/stacie-portrait.jpg"
+            src="/images/stacie-v2.jpeg"
             alt="Stacie J. Young, founder of Thrive Homeschool Group"
             fill
             className="object-cover object-top"
