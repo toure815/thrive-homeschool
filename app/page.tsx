@@ -104,20 +104,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right: Stacie's photo */}
+          {/* Right: kids doing homeschool */}
           <div className="relative hidden md:flex items-end justify-center h-full min-h-[88vh]">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-pink/10 via-brand-purple/5 to-brand-orange/10" />
             <div className="relative w-full h-full">
               <Image
-                src="/images/stacie-portrait.jpg"
-                alt="Stacie J. Young, founder of Thrive Homeschool Group"
+                src="/images/kids-homeschool.jpg"
+                alt="Kids doing homeschool work at the kitchen table"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 priority
                 sizes="50vw"
               />
-              {/* Gradient fade at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-cream to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-brand-cream to-transparent" />
             </div>
           </div>
         </div>

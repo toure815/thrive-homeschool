@@ -57,17 +57,16 @@ export default function AboutPage() {
         </div>
 
         {/* Family photo */}
-        <div className="rounded-3xl overflow-hidden mb-6 relative h-80">
+        <div className="rounded-3xl overflow-hidden mb-6 bg-brand-cream">
           <Image
-            src="/images/family-christmas.jpg"
+            src="/images/family-outing.jpg"
             alt="The Young family"
-            fill
-            className="object-cover object-top"
+            width={5712}
+            height={4284}
+            className="w-full h-auto object-contain"
             sizes="(max-width: 768px) 100vw, 768px"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-6">
-            <p className="text-white text-sm font-medium italic">The Young family</p>
-          </div>
+          <p className="text-center text-gray-400 text-sm italic py-3">The Young family</p>
         </div>
 
         {/* Mission */}
