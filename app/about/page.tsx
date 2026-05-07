@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import OptInForm from "@/components/OptInForm";
 
 export const metadata: Metadata = {
@@ -12,9 +13,14 @@ export default function AboutPage() {
       <p className="text-brand-pink font-semibold text-sm uppercase tracking-widest mb-2">Our Story</p>
       <h1 className="font-serif text-4xl font-bold text-brand-navy mb-6">About Thrive Homeschool Group</h1>
 
-      {/* Founder photo placeholder — swap with real image once received */}
-      <div className="w-48 h-48 rounded-full bg-brand-cream border-4 border-brand-pink/30 mx-auto mb-8 flex items-center justify-center text-gray-400 text-sm">
-        Founder Photo
+      <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-brand-pink/30 mx-auto mb-8 relative">
+        <Image
+          src="/images/stacie.jpeg"
+          alt="Stacie J. Young, founder of Thrive Homeschool Group"
+          fill
+          className="object-cover rotate-90 scale-[1.4]"
+          sizes="192px"
+        />
       </div>
 
       <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
