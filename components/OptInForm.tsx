@@ -4,9 +4,10 @@ import { useState } from "react";
 
 type Props = {
   variant?: "hero" | "inline" | "post";
+  hideHeading?: boolean;
 };
 
-export default function OptInForm({ variant = "inline" }: Props) {
+export default function OptInForm({ variant = "inline", hideHeading = false }: Props) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -53,12 +54,16 @@ export default function OptInForm({ variant = "inline" }: Props) {
       {isPost && (
         <p className="text-xs font-semibold uppercase tracking-widest text-brand-pink mb-1">Free Resource</p>
       )}
-      <h3 className={`font-serif font-bold ${isHero ? "text-2xl text-brand-navy" : "text-xl text-brand-navy"} mb-1`}>
-        Download My Free SMART Homeschooling Guide
-      </h3>
-      <p className="text-gray-600 text-sm mb-4">
-        A practical framework for homeschool families who want to plan with confidence. No overwhelm, no guilt.
-      </p>
+      {!hideHeading && (
+        <>
+          <h3 className={`font-serif font-bold ${isHero ? "text-2xl text-brand-navy" : "text-xl text-brand-navy"} mb-1`}>
+            Download My Free SMART Homeschooling Guide
+          </h3>
+          <p className="text-gray-600 text-sm mb-4">
+            A practical framework for homeschool families who want to plan with confidence. No overwhelm, no guilt.
+          </p>
+        </>
+      )}
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input
@@ -81,7 +86,7 @@ export default function OptInForm({ variant = "inline" }: Props) {
           disabled={status === "loading"}
           className="bg-brand-pink hover:bg-brand-purple text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-60"
         >
-          {status === "loading" ? "Sending…" : "Send Me the Free Guide →"}
+          {status === "loading" ? "Sending…" : "Get the Free Guide →"}
         </button>
         {status === "error" && <p className="text-red-600 text-xs">{message}</p>}
         <p className="text-gray-400 text-xs text-center">No spam. Unsubscribe anytime.</p>

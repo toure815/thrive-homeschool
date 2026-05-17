@@ -4,7 +4,7 @@ import OptInForm from "@/components/OptInForm";
 
 export const metadata: Metadata = {
   title: "About Stacie",
-  description: "Meet Stacie J. Young, founder of Thrive Homeschool Group and homeschool mom to four kids spanning college to third grade.",
+  description: "Meet Stacie J. Young, homeschool mom of four and founder of Thrive Homeschool Group. Twelve years of homeschooling across every stage from kindergarten through college.",
 };
 
 export default function AboutPage() {
@@ -26,17 +26,17 @@ export default function AboutPage() {
         </div>
         <div>
           <p className="font-serif text-5xl font-bold text-brand-maroon mb-1">
-            Hi, I&apos;m Stacie.
+            About Stacie
           </p>
           <p className="text-brand-purple font-medium text-lg mb-6">
             Founder of Thrive Homeschool Group
           </p>
           <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
             <p>
-              I&apos;m a homeschool mom in the thick of it, and I mean that in the best possible way. Right now I&apos;m raising and teaching four kids who couldn&apos;t be more different: a son in his third year of college, a high school senior, a junior, and my youngest who is in third grade.
+              Hi, I&apos;m Stacie. Welcome to Thrive Homeschool Group.
             </p>
             <p>
-              Every single stage, all at once. And I wouldn&apos;t have it any other way.
+              I&apos;m a homeschool mom of four. Twelve years into this journey. Currently teaching my 9-year-old at home while my older three are in different seasons of their lives.
             </p>
           </div>
         </div>
@@ -46,18 +46,39 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto">
         <div className="prose prose-lg max-w-none text-gray-600 space-y-5 mb-14">
           <p>
-            That range means I&apos;ve had to figure out how to meet each of my kids exactly where they are, from helping a college student think through his future, to guiding a senior through her last year at home, to keeping a curious third grader engaged and excited every single morning. There is no one curriculum that works for all of them. There is no one plan that fits every season.
+            My oldest son is a junior in college on academic and athletic scholarship, on track to graduate next spring. My daughter graduates from our homeschool this June. My third son is a rising senior. And my youngest, Christian, is in 3rd grade and has never set foot in a traditional classroom.
           </p>
           <p>
-            What I found, though, is that having a framework makes all the difference. Not a rigid schedule or someone else&apos;s perfect routine, but a flexible, intentional approach that gives you confidence even when the day goes sideways.
+            I&apos;ve been the mom who pulled babies out of school in 3rd, 4th, and 7th grade because something wasn&apos;t working. I&apos;ve been the mom who started homeschooling from day one. I&apos;ve taught kindergarten phonics and high school algebra in the same year. I&apos;ve used curriculum that was perfect for one kid and a complete disaster for another. I&apos;ve had homeschool days where everything clicked, and days where I cried in the kitchen after lunch.
           </p>
           <p>
-            That&apos;s exactly why I created the S.M.A.R.T. Homeschooling system and built this space. Everything here comes from real experience in a real homeschool with real kids at real different stages. I want you to feel equipped, not overwhelmed. Inspired, not guilty.
+            Whatever your homeschool entry point is, I&apos;ve probably lived it. And I&apos;ve learned that there is no one right way to do this.
           </p>
         </div>
 
+        {/* Why Thrive Homeschool Group exists */}
+        <div className="mb-14">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-maroon mb-6">
+            Why Thrive Homeschool Group exists
+          </h2>
+          <div className="prose prose-lg max-w-none text-gray-600 space-y-5">
+            <p>
+              A few years ago I sat across from a new homeschool mama from another state. She was overwhelmed. She was anxious. And underneath all of it was one big, heavy question: &ldquo;Am I even doing this right?&rdquo;
+            </p>
+            <p>
+              I have had some version of that conversation more times than I can count. With moms in coffee shops. With moms in grocery store aisles. With moms in DMs at midnight.
+            </p>
+            <p>
+              The homeschool internet is flooded with how to content. What&apos;s missing is permission. Permission for moms to do it their way. Permission to not be perfect. Permission to take themselves less seriously.
+            </p>
+            <p>
+              That&apos;s why Thrive Homeschool Group exists. Not to give you another standard to live up to. Not to add another benchmark to your list. But to remind you, week after week, that you&apos;re already doing the most important part. And to share what&apos;s actually worked across four very different babies and twelve very different years.
+            </p>
+          </div>
+        </div>
+
         {/* Family photo */}
-        <div className="rounded-3xl overflow-hidden mb-6 bg-brand-cream">
+        <div className="rounded-3xl overflow-hidden mb-14 bg-brand-cream">
           <Image
             src="/images/family-outing.jpg"
             alt="The Young family"
@@ -69,14 +90,28 @@ export default function AboutPage() {
           <p className="text-center text-gray-400 text-sm italic py-3">The Young family</p>
         </div>
 
-        {/* Mission */}
-        <div className="bg-brand-maroon text-white rounded-3xl p-8 mb-12">
-          <h2 className="font-serif text-2xl font-bold mb-3 text-brand-orange">Our Mission</h2>
-          <p className="text-white/80 text-lg leading-relaxed">
-            Thrive Homeschool Group exists to give homeschool families practical tools, honest resources, and genuine encouragement to educate their children with purpose and joy, no matter where your kids are in their journey or what your school day looks like.
+        {/* What you'll find here */}
+        <div className="mb-14">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-maroon mb-6">
+            What you&apos;ll find here
+          </h2>
+          <div className="prose prose-lg max-w-none text-gray-600 space-y-5">
+            <p>
+              Real curriculum reviews from a mom who has actually used the materials. Flexible frameworks instead of rigid systems. Multi age homeschool strategies for families with kiddos across grade levels. Honest encouragement for the hard days. Practical resources that don&apos;t require a Pinterest perfect homeschool room.
+            </p>
+            <p>
+              I&apos;m so glad you&apos;re here.
+            </p>
+          </div>
+        </div>
+
+        {/* Pull quote */}
+        <div className="bg-brand-cream border-l-4 border-brand-pink rounded-2xl p-8 mb-14">
+          <p className="font-serif text-2xl md:text-3xl text-brand-maroon leading-snug mb-3">
+            &ldquo;Don&apos;t take yourself too seriously.&rdquo;
           </p>
-          <p className="text-white/80 text-lg leading-relaxed mt-3">
-            Whether you have a little one just learning letters or a teenager preparing for college, you belong here.
+          <p className="text-brand-purple text-sm font-medium">
+            The best advice I ever got as a homeschool mom
           </p>
         </div>
 

@@ -144,6 +144,46 @@ export default function HomePage() {
         </section>
       </ScrollReveal>
 
+      {/* ── MEET STACIE ── */}
+      <ScrollReveal>
+        <section className="py-20 px-4 bg-brand-cream">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-auto md:h-[520px] order-1 md:order-1">
+              <Image
+                src="/images/stacie-v2.jpeg"
+                alt="Stacie J. Young, founder of Thrive Homeschool Group"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="order-2 md:order-2">
+              <p className="text-brand-pink font-semibold text-xs uppercase tracking-[0.2em] mb-3">Meet the Founder</p>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-maroon leading-tight mb-6">
+                Hi, I&apos;m Stacie
+              </h2>
+              <div className="space-y-4 text-gray-600 text-lg leading-relaxed mb-8">
+                <p>
+                  I&apos;m a homeschool mom of four. Three of my babies have already been taught through high school, and my youngest is in 3rd grade. My oldest son is a junior in college on academic and athletic scholarship, my daughter graduates this June, and my third son is a rising senior.
+                </p>
+                <p>
+                  I&apos;ve pulled babies out of school in 3rd, 4th, and 7th grade. I&apos;ve also homeschooled from day one. Whatever your homeschool entry point is, I&apos;ve probably lived it.
+                </p>
+                <p>
+                  I built this space to share what&apos;s actually worked for our family across twelve years, four very different kiddos, and a whole lot of real life. No guilt. No overwhelm. Just progress.
+                </p>
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 bg-brand-maroon hover:bg-brand-purple text-white font-semibold px-7 py-4 rounded-full transition-all duration-200 text-sm shadow-lg shadow-brand-maroon/20"
+              >
+                Read My Story <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* ── BENTO BLOG GRID ── */}
       <section className="max-w-6xl mx-auto px-4 py-20">
         <ScrollReveal>
@@ -170,17 +210,20 @@ export default function HomePage() {
         <ScrollReveal>
           <div className="max-w-2xl mx-auto text-center mb-10">
             <p className="text-brand-pink font-semibold text-xs uppercase tracking-[0.18em] mb-3">Free Download</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-maroon mb-4">
-              Grab the Free S.M.A.R.T. Homeschooling Guide
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-maroon mb-5">
+              Download My Free SMART Homeschooling Guide
             </h2>
-            <p className="text-gray-500 text-lg leading-relaxed">
-              A practical framework for planning your homeschool year with confidence. No experience required.
+            <p className="text-gray-600 text-lg leading-relaxed mb-4">
+              If you&apos;re feeling overwhelmed by curriculum choices, that was the hardest part for me too. I put together a free guide that walks you through a flexible framework for choosing curriculum without the second guessing. It&apos;s the system I wish I&apos;d had when I was starting out.
+            </p>
+            <p className="text-brand-purple font-medium text-sm uppercase tracking-[0.18em]">
+              For any stage of your homeschool journey
             </p>
           </div>
         </ScrollReveal>
         <ScrollReveal delay={100}>
           <div className="max-w-md mx-auto">
-            <OptInForm variant="inline" />
+            <OptInForm variant="inline" hideHeading />
           </div>
         </ScrollReveal>
       </section>
